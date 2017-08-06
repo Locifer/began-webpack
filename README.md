@@ -29,6 +29,11 @@ npm install --save-dev file-loader
 多項輸入 & 自動生成HTML>>
 npm install --save-dev html-webpack-plugin
 
-清理 /dist 文件夹
+清理 /dist 文件夹>>
 npm install clean-webpack-plugin --save-dev
+
+**第五次commit**
+
+source map & 使用 webpack-dev-server >>
+npm install --save-dev webpack-dev-server
 
