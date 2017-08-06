@@ -1,9 +1,14 @@
 var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //自動生成HTML
+const CleanWebpackPlugin = require('clean-webpack-plugin'); //清理 /dist 文件夹
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -22,5 +27,11 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins:[
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: 'webpack project'
+        })
+    ]
 }
