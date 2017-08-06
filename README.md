@@ -47,6 +47,11 @@ npm install sass-loader node-sass webpack --save-dev
 將CSS獨立出來，瀏覽器能夠同時載入css和js加快速度>>
 npm install --save-dev extract-text-webpack-plugin
 
-**第八次**
+**第八次commit**
 
-使用HTML範本 可以直接用webpack切版再轉JS生出代碼了?
+使用HTML範本 可以直接用webpack切版再轉JS生出代碼了(應該或許可以了吧!)
+
+**第九次commit - 錯誤Error**
+
+webpack -p時最小化程式碼>>
+npm install uglifyjs-webpack-plugin --save-dev

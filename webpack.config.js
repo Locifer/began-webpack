@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); //自動生成HTML
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //清理 /dist 文件夹
 const ExtractTextPlugin = require("extract-text-webpack-plugin");//分離檔案出來
 const webpack = require('webpack');//使用webpack
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); //縮減代碼
 
 module.exports = {
     entry: {
@@ -53,6 +53,7 @@ module.exports = {
             template: 'src/kirin.html'
         }),//使用範本test.html
         new webpack.HotModuleReplacementPlugin(), // 启用 HMR
-        new ExtractTextPlugin("styles.css") //分離CSS
+        new ExtractTextPlugin("styles.css"), //分離CSS
+        new UglifyJSPlugin()
     ]
 }
