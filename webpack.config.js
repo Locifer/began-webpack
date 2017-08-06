@@ -47,7 +47,11 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'webpack project'
-        }),
+        }),//預設index.html
+        new HtmlWebpackPlugin({
+            filename: 'test.html',
+            template: 'src/kirin.html'
+        }),//使用範本test.html
         new webpack.HotModuleReplacementPlugin(), // 启用 HMR
         new ExtractTextPlugin("styles.css") //分離CSS
     ]

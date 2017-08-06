@@ -43,5 +43,10 @@ npm install --save-dev webpack-dev-server
 npm install sass-loader node-sass webpack --save-dev
 
 **第七次commit**
+
 將CSS獨立出來，瀏覽器能夠同時載入css和js加快速度>>
 npm install --save-dev extract-text-webpack-plugin
+
+**第八次**
+
+使用HTML範本 可以直接用webpack切版再轉JS生出代碼了?
