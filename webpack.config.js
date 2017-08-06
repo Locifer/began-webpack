@@ -1,6 +1,9 @@
 var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //自動生成HTML
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //清理 /dist 文件夹
+const ExtractTextPlugin = require("extract-text-webpack-plugin");//分離檔案出來
+const webpack = require('webpack');//使用webpack
+
 
 module.exports = {
     entry: {
@@ -16,11 +19,15 @@ module.exports = {
         rules: [
             {
                 test: /\.(css|scss|sass)$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
+                // use: [
+                //     'style-loader',
+                //     'css-loader',
+                //     'sass-loader'
+                // ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use:['css-loader','sass-loader']
+                })
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -31,15 +38,17 @@ module.exports = {
         ]
     },
     devServer:{
-        contentBase: './dist'
-        // hot: true,
-        // contentBase: path.resolve(__dirname, 'dist'),
-        // publicPath: '/'
+        // contentBase: './dist'
+        hot: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     plugins:[
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'webpack project'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin(), // 启用 HMR
+        new ExtractTextPlugin("styles.css") //分離CSS
     ]
 }

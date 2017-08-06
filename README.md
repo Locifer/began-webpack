@@ -41,3 +41,7 @@ npm install --save-dev webpack-dev-server
 
 加入JS程式碼 & sass使用>>
 npm install sass-loader node-sass webpack --save-dev
+
+**第七次commit**
+將CSS獨立出來，瀏覽器能夠同時載入css和js加快速度>>
+npm install --save-dev extract-text-webpack-plugin
