@@ -55,3 +55,17 @@ npm install --save-dev extract-text-webpack-plugin
 
 webpack -p時最小化程式碼>>
 npm install uglifyjs-webpack-plugin --save-dev
+
+**第十次commit - 拿掉編譯的-p**
+
+//---生成檔案時使用webpack 不要加上-p參數--  //--
+
+错误：webpack -p编译时产生下面的错误。webpack编译时没有问题。
+
+ERROR in polyfills.bundle.js from UglifyJs
+
+TypeError: Cannot read property 'sections' of null
+
+原因：
+
+插件（new webpack.optimize.UglifyJsPlugin()）和命令行参数 --opimize-minimize (or -p) 导致重复加入两次UglifyJsPlugin。去掉UglifyJsPlugin插件或者去掉命令行参数 -p 。
