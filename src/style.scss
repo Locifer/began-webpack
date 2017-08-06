@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+$color: pink; 
+
+body,html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: $color;
+    background-image: url('./evil.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .hi{
+        color: white;
+        text-align: center;
+        font-size: 2.5em;
+    }
+}

@@ -37,3 +37,7 @@ npm install clean-webpack-plugin --save-dev
 source map & 使用 webpack-dev-server >>
 npm install --save-dev webpack-dev-server
 
+**第六次commit**
+
+加入JS程式碼 & sass使用>>
+npm install sass-loader node-sass webpack --save-dev

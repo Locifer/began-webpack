@@ -15,10 +15,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(css|scss|sass)$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -30,10 +31,10 @@ module.exports = {
         ]
     },
     devServer:{
-        // contentBase: './dist'
-        hot: true,
-        contentBase: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        contentBase: './dist'
+        // hot: true,
+        // contentBase: path.resolve(__dirname, 'dist'),
+        // publicPath: '/'
     },
     plugins:[
         new CleanWebpackPlugin(['dist']),
